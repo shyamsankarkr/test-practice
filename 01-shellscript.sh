@@ -1,7 +1,7 @@
 
 USERId=$(id -u)
 
-if[ USERId -ne 0 ]
+if [ USERId -ne 0 ]
 then
    echo "run it with sudo access"
    exit 1
@@ -9,7 +9,7 @@ fi
  
 yum install mysql -y
 
-if[ $? -ne 0 ]
+if [ $? -ne 0 ]
 then
   echo "error in installation"
   exit 1
