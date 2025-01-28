@@ -20,7 +20,7 @@ if [ $USERId -ne 0 ]; then
   exit 1
 fi
 
-# Suppress all apt output including progress
-DEBIAN_FRONTEND=noninteractive apt install ansible -y -qq &>>$LOGFILE
+# Suppress all output including progress
+DEBIAN_FRONTEND=noninteractive apt install ansible -y -qq &>>$LOGFILE < /dev/null
 
 VALIDATE $? "ansible"
