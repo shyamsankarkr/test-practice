@@ -1,7 +1,7 @@
 
 USERId=$(id -u)
 
-if [ USERId -ne 0 ]
+if [ $USERId -ne 0 ]
 then
    echo "run it with sudo access"
    exit 1
