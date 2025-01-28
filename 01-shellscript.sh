@@ -1,4 +1,6 @@
-
+DATE=$(date +%F)
+SCRIPTNAME=$0
+LOGFILE=/tmp/$SCRIPTNAME-$DATE.log
 USERId=$(id -u)
 
 VALIDATE(){
@@ -17,6 +19,6 @@ then
    exit 1
 fi
  
-apt install ansible -y
+apt install ansible -y &>>$LOGFILE
 
 VALIDATE $? ansible
