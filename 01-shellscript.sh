@@ -21,4 +21,4 @@ fi
  
 apt install ansible -y &>>$LOGFILE
 
-VALIDATE $? ansible
+VALIDATE $? "ansible"
