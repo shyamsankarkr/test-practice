@@ -1,18 +1,22 @@
 
 USERId=$(id -u)
 
+VALIDATE(){
+if [ $1 -ne 0 ]
+then
+  echo "error in installation"
+  exit 1
+else 
+  echo "$2 successfully installed"
+fi
+}
+
 if [ $USERId -ne 0 ]
 then
    echo "run it with sudo access"
    exit 1
 fi
  
-apt install mysql -y
+apt install ansible -y
 
-if [ $? -ne 0 ]
-then
-  echo "error in installation"
-  exit 1
-else 
-  echo "mysql successfully installed"
-fi
+VALIDATE $? ansible
