@@ -3,7 +3,7 @@
 DATE=$(date +%F)
 SCRIPTNAME=$0
 LOGFILE="/tmp/$SCRIPTNAME-$DATE.log"
-USERId=$(id -u)
+USERID=$(id -u)
 R="\e[31m"
 Y="\e[33m"
 N="\e[0m"
@@ -19,7 +19,7 @@ VALIDATE(){
     echo -e "$R Error in installation of $2"
     exit 1
   else
-    echo "$2 successfully installed"
+    echo -e "$G $2 successfully installed"
   fi
 }
 
