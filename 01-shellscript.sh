@@ -23,7 +23,7 @@ VALIDATE(){
   fi
 }
 
-if [ $USERId -ne 0 ]
+if [ $USERID -ne 0 ]
 then
   echo "Run it with sudo access"
   exit 1
