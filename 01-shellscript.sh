@@ -29,6 +29,6 @@ then
   exit 1
 fi
 
-yum install git -y &>>$LOGFILE
+apt install git -y &>>$LOGFILE
 
 VALIDATE $? "ansible"
