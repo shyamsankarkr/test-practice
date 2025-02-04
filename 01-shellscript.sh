@@ -30,5 +30,7 @@ then
 fi
 
 # llld &>>$LOGFILE
+echo -e "\e[31mThis is red\e[0m"
+
 
 VALIDATE $? "ansible"
