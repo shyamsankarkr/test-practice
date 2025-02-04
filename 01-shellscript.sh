@@ -19,18 +19,16 @@ VALIDATE(){
     echo -e "$R Error in installation of $2"
     exit 1
   else
-    echo -e "$G$2 successfully installed $N"
+    echo -e "$G $2 successfully installed"
   fi
 }
 
-if [ $USERID -ne 0 ]
+if [ $USERId -ne 0 ]
 then
   echo "Run it with sudo access"
   exit 1
 fi
 
-# llld &>>$LOGFILE
-echo -e "\e[31mThis is red\e[0m"
-
+apt install git -y &>>$LOGFILE
 
 VALIDATE $? "ansible"
