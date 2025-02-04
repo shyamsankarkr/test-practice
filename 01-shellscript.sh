@@ -29,6 +29,6 @@ then
   exit 1
 fi
 
-llld &>>LOGFILE
+llld &>>$LOGFILE
 
 VALIDATE $? "ansible"
