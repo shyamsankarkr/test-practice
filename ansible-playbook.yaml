@@ -5,7 +5,7 @@
   tasks:
     - name: check id exists or not
       ansible.builtin.command:
-        cmd: id roboshop
+        _raw_params: id roboshop
       register: output
 
     - name: print the output
