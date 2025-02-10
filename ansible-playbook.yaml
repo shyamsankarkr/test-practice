@@ -1,11 +1,10 @@
 - name: Testing Ansible
   hosts: localhost
   gather_facts: false
-  vars_files:
-    - variables.yml
   tasks:
     - name: Check if user 'roboshop' exists
-      ansible.builtin.shell: "id roboshop"
+      ansible.builtin.shell:
+        cmd: "id roboshop"
       register: output
       ignore_errors: true
 
