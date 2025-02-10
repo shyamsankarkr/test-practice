@@ -4,6 +4,7 @@
   tasks:
     - name: Check if user 'roboshop' exists
       ansible.builtin.shell: "id roboshop"
+      become: true
       register: output
       ignore_errors: true
 
