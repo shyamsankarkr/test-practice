@@ -3,11 +3,10 @@
   gather_facts: false
   tasks:
     - name: Check if user 'roboshop' exists
-      ansible.builtin.shell:
-        cmd: "id roboshop"
+      ansible.builtin.shell: "id roboshop"
       register: output
       ignore_errors: true
 
     - name: Print the output
       ansible.builtin.debug:
-        msg: "Output is {{ output.stdout }}"
+        msg: "Output is {{ output.stdout | default('User not found') }}"
