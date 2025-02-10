@@ -2,8 +2,7 @@
   hosts: localhost
   tasks:
     - name: check id exists or not
-      ansible.builtin.command:
-        _raw_params: id roboshop
+      ansible.builtin.command: ls
       register: output
 
     - name: print the output
