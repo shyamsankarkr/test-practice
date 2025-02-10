@@ -1,13 +1,11 @@
-- name: Testing Ansible
+- name: Test Ansible Shell in WSL
   hosts: localhost
   gather_facts: false
   tasks:
-    - name: Check if user 'roboshop' exists
-      ansible.builtin.shell: "id roboshop"
-      become: true
-      register: output
-      ignore_errors: true
+    - name: Run simple echo command
+      ansible.builtin.shell: "echo 'Hello from Ansible in WSL'"
+      register: test_output
 
-    - name: Print the output
+    - name: Print command output
       ansible.builtin.debug:
-        msg: "Output is {{ output.stdout | default('User not found') }}"
+        msg: "{{ test_output.stdout }}"
