@@ -6,6 +6,6 @@
     # - name: outputting a command
     #   ansible.builtin.debug:
     #     msg: hi, my name is {{NAME}}, I am {{AGE}} years old and I am {{JOB}}
-    # - name: check id exists or not
-    ansible.builtin.command: id roboshop
-    register: output
+    - name: check id exists or not
+      ansible.builtin.command: id roboshop
+      register: output
