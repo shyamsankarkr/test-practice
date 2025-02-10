@@ -1,10 +1,13 @@
-- name: testing ansible
+- name: Testing Ansible
   hosts: localhost
+  vars_files:
+    - variables.yml
   tasks:
-    - name: check id exists or not
-      ansible.builtin.command: ls
+    - name: Check if user 'roboshop' exists
+      ansible.builtin.command: id roboshop
       register: output
+      ignore_errors: true
 
-    - name: print the output
+    - name: Print the output
       ansible.builtin.debug:
-        msg: "output is {{ output }}"
+        msg: "Output is {{ output.stdout }}"
