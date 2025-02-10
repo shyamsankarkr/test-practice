@@ -1,7 +1,7 @@
 - name: testing ansible
   hosts: localhost
   vars_files:
-    - ./variables.yml
+    - variables.yml
   tasks:
     - name: outputting a command
       ansible.builtin.debug:
